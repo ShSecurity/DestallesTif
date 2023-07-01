@@ -2,35 +2,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Car Secure, Inc. - Aplicación de Estacionamiento</title>
+  <title>Aplicación de Estacionamiento</title>
   <style>
+    ::-webkit-scrollbar {
+        width: 10px; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #ff0000; 
+        border-radius: 10px; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #00ff00; }
     body {
-      font-family: Arial, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       background: url('https://e0.pxfuel.com/wallpapers/724/246/desktop-wallpaper-parrot-os-%E2%9C%93-the-galleries-of.jpg') no-repeat center center fixed;
       background-size: cover;
     }
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.574);
       border-radius: 10px;
+      height: 100%;
+      border:solid 2px black;
+      animation: colorTitle 0.3s linear infinite;
     }
     h2 {
-      color: #333;
+      color: #000000;
+      font-family: Cambria, Cochin;
+      text-align: center;
+      border:solid 3px black;
+      border-radius: 15px;
+      animation: colorTitle 50s linear infinite;
     }
     .subtitle {
+      font-size: 16px;
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      color:rgb(223, 3, 3);
+      cursor: pointer;
+      width: 300px;
+      transition: font-size 0.2s;
+      
+    }
+    .subtitle:hover{
+        font-size: 20px;
+        color: rgb(4, 0, 255);
     }
     details {
       margin-bottom: 15px;
     }
+    ul{
+        list-style-type:circle;
+    }
+    @keyframes colorTitle{
+        1%{border-color: rgb(0, 0, 0);}
+        10%{border-color: rgb(72, 255, 0);}
+        20%{border-color: rgb(25, 0, 255);}
+        30%{border-color: rgb(255, 251, 0);}
+        40%{border-color: rgb(255, 0, 170);}
+        50%{border-color: rgb(4, 255, 0);}
+        60%{border-color: rgb(0, 229, 255);}
+        70%{border-color: rgb(0, 255, 157);}
+        80%{border-color: rgb(255, 234, 0);}
+        90%{border-color: red;}
+        99%{border-color: black;}
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Aplicación de Estacionamiento - Car Secure, Inc.</h2>
+    <h2>Aplicación de Estacionamiento tif</h2>
     <details>
         <summary class="subtitle">Utilización de Integrales:</summary>
         <ul>
@@ -94,9 +138,26 @@
     </details>
 
     <details>
-      <summary class="subtitle">Desarrollador: Offensive Security Code</summary>
+      <summary class="subtitle">Desarrollador:</summary>
       <p>Offensive Security Code, una destacada empresa de desarrollo de software, ha implementado integrales con el propósito de ofrecer a Car Secure, Inc. un sistema de registro de estacionamiento confiable y avanzado. Su enfoque en la eficiencia y calidad garantiza una experiencia segura y conveniente para todos los usuarios.</p>
     </details>
+    
   </div>
+  <script>
+    const allDetails = document.querySelectorAll("details");
+    function closeOtherDetails(currentDetails) {
+      allDetails.forEach((details) => {
+        if (details !== currentDetails) {
+          details.removeAttribute("open");
+        }
+      });
+    }
+    allDetails.forEach((details) => {
+      details.addEventListener("click", () => {
+        closeOtherDetails(details);
+      });
+    });
+  </script>
 </body>
 </html>
+
